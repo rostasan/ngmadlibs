@@ -1,0 +1,8 @@
+<form name="form">
+    <div>
+
+        <input type="email" name="email" ng-model="user.email" required>
+
+        <span ng-show="form.email.$dirty && form.email.$invalid">Valid email is required.</span>
+    </div>
+</form>

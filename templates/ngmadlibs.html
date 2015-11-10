@@ -1,0 +1,37 @@
+<table ng-controller="myCtrl">
+    <tr>
+        <td>
+            <img src="images/ngmadlibs.png" width="70%">
+        </td>
+        <td>
+            <img src="images/smiley.png" width="100%">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" ng-class="{blue: femalename}">
+            <input type="text" ng-model="femalename" />
+            <input type="text" ng-model="jobtitle" />
+            <input type="text" ng-model="tedioustask" />
+            <input type="text" ng-model="dirtytask" />
+            <input type="text" ng-model="celebrity" />
+            <input type="text" ng-model="uselessskill" />
+            <input type="text" ng-model="adjective" />
+            <input type="text" ng-model="obnoxiuouscelbertity" />
+            <input type="text" ng-model="hugenumber" />
+
+
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <p>
+                {{femalename}} was a {{jobtitle}} who loved technology. Although she loved parts of her job, she absolutely hated
+                {{tedioustask}} and {{dirtytask}}. So, {{femalename}} met with her life mentor {{celebrity}} who told her to learn
+                how to {{uselessskill}} with Thinkful. Thinkful didn't offer a course on {{uselessskill}} so she studied programming instead.
+            </p>
+            <p>
+                What a great decision! With her new skills, {{femalename}} built a(n) {{adjective}} robot named {{obnoxiuouscelbertity}}
+                that not only loved {{dirtytask}} but did it {{hugenumber}} faster.
+        </td>
+    </tr>
+</table>

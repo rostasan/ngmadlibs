@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+On the path to becoming a developer, there's one more tool you must learn as part of your development workflow: Git. Git is the most popular program used for "version control." Git lets you save snapshots of your project as you build it. Each time you save a snapshot, it shows you how the version you just saved differs from the previous version. You can (and will) use Git on any kind of project, whether it's a simple website or complex Android app. If you already have a GitHub account, and Git installed, skip the install section, and read over the lesson, to make sure you are up to speed with the workflow you will be using.
+
+Git on its own is useful, but if you want to work from multiple computers or collaborate with friends, simply saving a snapshot to your local machine isn't enough; you need to save a version to a server in the cloud that your co-workers can access. For that, you'll use GitHub, the most popular service for hosting code remotely. After saving a snapshot to Git, you'll "push" it to GitHub and then you'll have a copy stored on their servers. If you then switched to a new computer (or if a collaborator logged in from a different computer), you could "pull" a copy from GitHub, and work from exactly where you left off.
+
+There's a number of ways to use Git, but the most common workflow is to control it using the command line. That's how you'll do it. For the rest of the course, you're going to save every project using Git and store it on GitHub. In this assignment, you'll learn and practice the basics. By the end of the assignment, you'll be able to:
+
+Initialize (create) a new Git repository
+Add and commit (save) files to a repository
+Create a repository on GitHub for your project
+Push your commits to the GitHub repository
+Recover lost work from GitHub
+There's way more you can do with Git and GitHub, and more you'll have to learn to work as a developer, but you should become comfortable with these basics during this course before learning more advanced workflows.
+
+Installing Git and GitHub
+First, you'll need a GitHub account. Create an account by clicking this link and following their instructions.
+
+Next, you need to install Git. One approach is installing GitHub's Mac or Windows interface (or GUI), and letting their GUI take care of the rest (note that you could use their GUI to control Git, but you will learn how to control Git from the command line as most developers do).
+
+Installing The GitHub GUI
+After creating your GitHub account, visit the appropriate installer page:
+
+Mac GUI Install
+
+Visit GitHub for Mac then download and open the application. You'll be greeted with a setup window; enter the same credentials that you used for GitHub (don't worry about the 2-factor authentication at this point). Once you've finished the walkthrough, open your preferences (under "GitHub" on the menu bar at the top of your screen) and under "Advanced," click "Install the Command Line Tools."
+
+git_install.png
+
+It will prompt you for your administrator password, and then you'll be ready to use Git from the command line.
+
+Windows GUI Install
+
+Visit GitHub for Windows Website and follow their installation instructions. Once you've installed and opened it, you'll be greeted with a setup window; enter the same credentials that you used for GitHub (don't worry about the 2-factor authentication at this point). Once you've finished the walkthrough, open your preferences (under "GitHub" on the menu bar at the top of your screen) and under "Advanced," click "Install the Command Line Tools."
+
+That's it. You're ready to start using Git
+
+Configuring Git
+First, save your user name and email in Git. You'll only have to do this once. Make sure the username and email matches the credentials of your GitHub account. Use the following commands:
+
+git config --global user.name "Beyonce Knowles"
+git config --global user.email beyonce@thinkful.com
+Initializing a Git Repository
+To begin using version control you will initialize a Git repository on your project.
+
+First, use the cd command to change your directory so your command line points to a project you want to save. To confirm you've done it correctly, print your working directory (are you still saying 'pwd' out loud?). Then, use the git init command to "initialize" the repository:
+
+$ cd projects/HelloWorld/
+$ git init
+Initialized empty Git repository in /home/projects/helloworld/.git/
+Notice how Git tells you that you created the repository in the .git directory. This is a new directory that Git creates where all of the history for the project will be stored. The existence of a .git directory is also used to inform Git that you are working within a repository. The dot at the start of the directory name indicates that it is a hidden directory (you won't see it if you open the folder in through a graphical interface).
+
+Checking Status and Branches
+Take a look at what Git sees when a new repository is initialized. To do that, type git status into your command line. This command will soon be your best friend when using Git: it tells you everything you need to know about the current state of the repository. It's similar to pwd in that it doesn't cause anything to change; rather it's a sort of check for where you are:
+
+$ git status
+On branch master
+
+Initial commit
+g
+Untracked files:
+(use "git add <file>..." to include in what will be committed)
+
+    .gitignore
+    idea/
+    HelloWorld.html
+
+
+    nothing added to commit but untracked files present (use "git add" to track)
+    First it tells you that you're working on the master branch. A single repository can have multiple branches, each containing a different version of the code. It's common to use master as the stable branch which contains production-ready code (the code powering your actual, live product), and a development branch which is used as you develop new features (code not shipped to users until it's ready). For now, just use the master branch and do all your development on that.
+
+    "Saving" your Progress
+    The next important piece of information Git gives when you type git status is the status of the files. Currently you have "untracked" files. These are files which are inside the repository but are not under version control. To take a step back, when you save a Word document, you only need to do one thing: hit "save." In Git, saving a file requires two steps: telling Git to track the file (what's called, "adding" it), and then saving it (what's called "committing").
+
+    Generally you don't want to have untracked files within your repository. So use git add followed by the file name to tell Git to track any changes made to the files.
+
+    Angular projects generally have a lot of files and directories in them. The files can be buried within a bunch of directories. In order to add all of the files and directories with in the project type the following.
+
+    $ git add .
+    Now see what's changed in your status:
+
+    $ git status
+    On branch master
+
+    Initial commit
+
+    Changes to be committed:
+    (use "git reset HEAD <file>..." to unstage)
+
+
+        new file:   .gitignore
+        new file:   idea/name.html
+        new file:   idea/modules.js
+        new file:   HelloWorld.html
+        Now that Git is tracking the all of the files, you can commit them to store this particular snapshot of your project. You will need to add a message about your snapshot, so you know what changes you made. Try committing the changes using the git commit -m "Initial Commit" command:
+
+        $ git commit -m "Initial commit"
+        [master 7b0566d] commit all files
+        35 files changed, 630 insertions(+)
+        create mode 100644 .gitignore
+        create mode 100644 idea/name.html
+        create mode 100644 idea/modules.js
+        create mode 100644 HelloWorld.html
+        All of the files have been committed successfully. To confirm that everything was committed properly, type git status:
+
+        $ git status
+        On branch master
+        nothing to commit, working directory clean
+        When you see nothing to commit, working directory clean, you know that all your recent work was committed.
+
+        Saving your Snapshot to GitHub
+        Now that you have your first Git repo up and running you want to push it to GitHub so your co-workers can start adding to it. Go to the create new repository page, fill in the information for your repository, and hit Create Repository:
+
+        Creating a GitHub repo
+
+        When you have created the GitHub repository you will be shown a screen with some instructions for linking your Git repository with the remote GitHub repository:
+
+        GitHub setup
+
+        Because you have an existing repository set up on your computer, follow the second set of instructions. First, add the GitHub repository as a remote to your local Git repository using the git remote add command. Copy the git remote add command from GitHub.
+
+        A "remote" (or "remote repository") is a copy of your local repository which is held somewhere else (on GitHub's servers, in this case). You can push changes to a remote or pull changes from a remote to make sure that your local and remote repositories stay in sync. You can have more than one remote for a single repository. For example, you may have a remote which belongs to a collaborator so you can pull changes they have made into your local repository. Or you may have a separate remote which you will push to in order to deploy the latest version of your code.
+
+        Here you are creating a remote called origin. This is the name which is conventionally given to your main remote. You should push changes up to your origin remote on a regular basis so you have an up-to-date backup of your code and its history.
+
+        Push your commits to the GitHub repository.
+
+        Now, send your changes to the remote repository using the git push command.
+
+        $ git push origin master
+        Counting objects: 79, done.
+        Delta compression using up to 8 threads.
+        Compressing objects: 100% (46/46), done.
+        Writing objects: 100% (79/79), 104.34 KiB | 0 bytes/s, done.
+        Total 79 (delta 0), reused 0 (delta 0)
+        To https://github.com/ezefib/HelloWorld.git
+        * [new branch]      master -> master
+        Branch master set up to track remote branch master from origin.
+        This command is doing a couple of things. First, it will create the master branch in the remote repository because it does not currently exist. Then it sends the most recent snapshot of the newly created master branch so the copy on GitHub matches our local copy.
+
+        Try visiting your repository on the GitHub website. You should see that your local files and change history are now available to view online.
+
+        Pulling from GitHub
+
+        Another basic function of Git you need to know: how to pull from a remote repository so that your version matches the version on a remote server. To do so, you'll use the git pull command, pulling from the master branch. Type the following command:
+
+        $ git pull origin master
+        Already up-to-date.
+        Since the repo you're pulling from is already the same as your local repo, git compares the two and notifies you that your local version is up-to-date. If the remote version were different than your local version, it would overwrite your local version with any updated changes, such as a new feature or bug fix that a co-worker had developed. If you work from multiple computers, make sure you pull your freshest code from GitHub before you start working, in order to avoid conflicts later.
+
+        Get a repository from GitHub
+
+        The last basic function you should know about is getting other people's work from GitHub. This process will get you started in your first project. To get work someone else has stored on GitHub, you can clone it, or fork it. Forking is done on GitHub, and it creates a copy in your repository list. If you were to fork thinkful/angular, it would create yourname/angular. This woul allow you to make all the changes you wanted, without affecting the author's code. Once you have the repo forked, it's time to get it on your computer. GitHub has a nice feature that copies the link for the repo to your clipboard, located on the right side of the main page for your repo. You will want to get that link, and type git clone http://github.com/yourname/Angular. This will get you a local copy, and it will setup the remote origin, so you can just push the code up to GitHub when your ready.
+
+        Practicing this workflow: Challenge
+        This workflow is the same one you should follow with every project: initialize a Git repository on the folder of a specific project (make sure to initialize it in the right place), add your files, commit them, and then push them to GitHub. If it's your first time pushing a project to GitHub, you'll need to visit the GitHub website, create a repository there, and then set your local repository up to match that with the command provided by GitHub.
+
+        A common mantra with Git is: "commit early and often." You want to save your work frequently so you don't lose progress, and so that you can review the history of your progress in logical steps when you're finished (there's a page on GitHub where you can see a history of commits).
+
+        Run through this workflow one more time with a new project:
+
+        Create a new folder in your "projects" folder. Name it whatever you'd like.
+        Add at least two files to this folder.
+        Initialize the repository using Git from the command line.
+        Create a repository on GitHub and connect your local repository to it.
+        Add and commit your files.
+        Push them to GitHub.
+        You'll likely find yourself referencing the commands for each of these steps. If you are, do the challenge one more time to get comfortable with the workflow.
+
+        Git Cheatsheet
+        Use this cheatsheet as a reference for each of the steps in the basic git workflow.
+
+        How to commit your work for the first time in a new project:
+
+        Initialize a repository: type git init. Command line should say “Initialized empty Git repository"
+        Check the repository: type git status. It should show you the untracked files.
+        Save your progress: track the file by adding it using git add followed by each of the filenames, one at a time.
+        Check what has changed: type git status.
+        Commit the changes: type git commit -m "commit message"
+        Success! If you type git status You should see “nothing to commit, working directory clean”
+        Pushing your snapshot to GitHub:
+
+        Go to GitHub.com and create a new repository
+        Add GitHub repository as a remote branch: Use git remote add origin git@github.com... (follow GitHub's instructions for this line)
+        Send changes to repository: type git push origin master to send your committed changes.
+        To pull from GitHub: Use the command git pull to keep your version up-to-date with the remote version
+        What is git?
+
+        Git is a command line tool that is used to track files, and maintain versions of your projects.
+
+        What is GitHub?
+
+        GitHub is a version control storage website, that you can send data to. GitHub reads your Git information, and allows for simple page hosting.
+
+        How do you save data with Git?
+
+        First, you initialize a Git repository with git init. Then tell git what files to save with git add -A, and finally commit the changes with git commit -am "commit message"
+
+        How do you send your information to GitHub?
+
+        You need to setup a remote repository in Git and point it at your GitHib repository. First, create a new repo on GitHub, then copy the link, and in Git use git remote add 'link'.
+
+        How do you check the status of your files?
+
+        Use git status.
+</body>
+</html>
