@@ -1,6 +1,7 @@
+<form name="madForm">
 <tr>
-    <td colspan="2" ng-class="{blue: femalename}">
-        <input type="text" ng-model="femalename" />
+    <td colspan="2" ng-class="{blue: femalename}" ng-model="formMessage">
+        <input type="text" ng-model="femalename" required ng-minlength ="2" ng-pattern=""/>
         <input type="text" ng-model="jobtitle" />
         <input type="text" ng-model="tedioustask" />
         <input type="text" ng-model="dirtytask" />
@@ -13,3 +14,4 @@
 
     </td>
 </tr>
+</form>
