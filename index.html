@@ -7,10 +7,21 @@
   </head>
 
   <body>
-  <span ng-view=""></span>
+  <span> <a href="#/build"> Build </a>   <a href="#/display"> result </a></span>
 
   <!-- https://www.youtube.com/watch?v=G5MzkDJQkoQ -->
 
+  <table ng-controller="myCtrl">
+      <tr>
+          <td>
+              <img src="images/ngmadlibs.png" width="70%">
+          </td>
+          <td>
+              <img src="images/smiley.png" width="100%">
+          </td>
+      </tr>
+      <div ng-view></div>
+  </table>
 
   
  

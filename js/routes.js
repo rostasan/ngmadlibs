@@ -3,17 +3,29 @@
  */
 angular.module('myApp', ['ngRoute'])
     .config(['$routeProvider', function($routeProvider){
-        $routeProvider.when('/'){
-            templateUrl : 'templates/home.html'
-            controller : 'HomeCtrl'}
-        $routeProvider.when('ngMadlibs'){
-            templateUrl : 'templates/ngmadlibs.html'
-            controller : 'script.js'
-        }
-    }
+        $routeProvider.
 
+            when('/',
+            {
+                templateUrl : 'templates/home.html',
+                controller : 'HomeCtrl'
+            }).
 
-    ])
+            when('/ngMadlibs',
+            {
+                templateUrl : 'templates/ngmadlibs.html',
+                controller : 'script.js'
+            }).
 
+            when('/display',
+            {
+                templateUrl : 'templates/ngmadlibs.html',
+                controller : 'script.js'
+            }).
 
-;
+            when('/build',
+            {
+                templateUrl : 'templates/ngmadlibs.html',
+                controller : 'script.js'
+            })
+    }]);
