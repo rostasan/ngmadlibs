@@ -1,14 +1,14 @@
 /**
  * Created by 0 on 11/5/2015.
  */
-angular.module('myApp', ['ngRoute'])
+angular.module('madApp', ['ngRoute'])
     .config(['$routeProvider', function($routeProvider){
         $routeProvider.
 
             when('/',
             {
                 templateUrl : 'templates/home.html',
-                controller : 'HomeCtrl'
+                controller : 'appCtrl'
             }).
 
             when('/ngMadlibs',
@@ -19,13 +19,13 @@ angular.module('myApp', ['ngRoute'])
 
             when('/display',
             {
-                templateUrl : 'templates/ngmadlibs.html',
-                controller : 'script.js'
+                templateUrl : 'templates/display.html',
+                controller : 'appCtrl'
             }).
 
             when('/build',
             {
-                templateUrl : 'templates/ngmadlibs.html',
-                controller : 'script.js'
+                templateUrl : 'templates/build.html',
+                controller : 'appCtrl'
             })
     }]);

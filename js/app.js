@@ -1,10 +1,5 @@
-// Code goes here
-
-var myApp = angular.module('myApp', [])
+angular.module('madApp')
   .constant('VERSION', 1.1)
   .run(function(VERSION, $rootScope) {
     $rootScope.version = VERSION;
 });
-
-
-
