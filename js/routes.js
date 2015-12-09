@@ -14,7 +14,7 @@ angular.module('madApp', ['ngRoute'])
             when('/ngMadlibs',
             {
                 templateUrl : 'templates/ngmadlibs.html',
-                controller : 'script.js'
+                controller : 'appCtrl'
             }).
 
             when('/display',
