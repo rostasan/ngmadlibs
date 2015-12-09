@@ -2,16 +2,25 @@
 <tr>
     <td colspan="2">
         
-        <select ng-model="selected.xfemalenames" ng-options="xfemalenames.name for xfemalenames in xfemalename"></select>
-            <!-- <input type="text" ng-model="xfemalename" required ng-minlength ="2" ng-pattern=""/>-->
-        <input type="text" ng-model="xjobtitle" required />
-        <input type="text" ng-model="xtedioustask" required />
-        <input type="text" ng-model="xdirtytask" required />
-        <input type="text" ng-model="xcelebrity" required />
-        <input type="text" ng-model="xuselessskill" required />
-        <input type="text" ng-model="xadjective" required />
-        <input type="text" ng-model="xobnoxiuouscelbertity" required />
-        <input type="text" ng-model="xhugenumber" required />
+        <select ng-model="selected.xfemalenames" ng-options="xfemalenames.name for xfemalenames in xfemalename" required><option value='' disabled selected>Select a Female Name</option></select>
+            <span ng-show="madForm.xfemalenames.$error.required">Please select a female name</span>
+        <!-- <input type="text" ng-model="xfemalename" required ng-minlength ="2" ng-pattern=""/>-->
+        <input type="text" ng-model="xjobtitle" required placeholder='Job Title'/>
+              <span ng-show="madForm.xjobtitle.$error.required">Please select a female name</span>
+        <input type="text" ng-model="xtedioustask" required  placeholder='Tedious Task'/>
+              <span ng-show="madForm.xtedioustask.$error.required">Please Enter a Tedious Task</span>
+        <input type="text" ng-model="xdirtytask" required  placeholder='Dirty Task'/>
+              <span ng-show="madForm.xdirtytask.$error.required">Please Enter a Dirty Task</span>
+        <input type="text" ng-model="xcelebrity" required  placeholder='Celebrity's Name'/>
+              <span ng-show="madForm.xcelebrity.$error.required">Please Enter a Celebrity's Name</span>
+        <input type="text" ng-model="xuselessskill" required  placeholder='Useless Skill'/>
+              <span ng-show="madForm.xuselessskill.$error.required">Please Enter a Useless Skill</span>
+        <input type="text" ng-model="xadjective" required  placeholder='Adjective'/>
+              <span ng-show="madForm.xadjective.$error.required">Please Enter an Adjective</span>
+        <input type="text" ng-model="xobnoxiuouscelbertity" required  placeholder='Obnoxiuos Celebrity'/>
+              <span ng-show="madForm.xobnoxiuouscelbertity.$error.required">Please  Enter an Obnoxiuos Celebrity</span>
+        <input type="text" ng-model="xhugenumber" required  placeholder='Huge Number'/>
+              <span ng-show="madForm.xhugenumber.$error.required">Please Enter a Huge Number</span>
         <input type="submit" value="Submit" />
 
     </td>

@@ -33,14 +33,14 @@ function appCtrl($scope){
                             {name: "Evelyn"},
                             {name: "Addison"} 
                             ];
-        $scope.xjobtitle = "job title";
-        $scope.xtedioustask = "tedious task";
-        $scope.xdirtytask = "dirty task";
-        $scope.xcelebrity = "celebrity";
-        $scope.xuselessskill = "useless skill";
-        $scope.xadjective = "adjective";
-        $scope.xobnoxiuouscelbertity = "obnoxiuous celbertity";
-        $scope.xhugenumber = "huge number";
+        $scope.xjobtitle = "";
+        $scope.xtedioustask = "";
+        $scope.xdirtytask = "";
+        $scope.xcelebrity = "";
+        $scope.xuselessskill = "";
+        $scope.xadjective = "";
+        $scope.xobnoxiuouscelbertity = "";
+        $scope.xhugenumber = "";
         $scope.madLib = function(){
             console.log("Submitting worked");
                 $scope.femalename = $scope.selected.xfemalenames.name;
