@@ -1,49 +1,72 @@
-<form name="madForm" ng-submit="madLib()" novalidate>
+<div id="parent" >
+<form name="madForm" ng-submit="madLib()" novalidate class="error" ng-model-options="{ updateOn: 'submitted' }">
 <tr>
     <td colspan="2">
-        
-        <select  ng-model-options="{ debounce: 500000 }" name="femalenames" ng-model="selected.xfemalenames" ng-options="xfemalenames.name for xfemalenames in xfemalename" required>
-            <option value='' disabled selected>Select a Female Name</option></select>
-            <span class="error" ng-show="madForm.femalenames.$error.required">Choosing a name is required.</span>
 
-        <input type="text" name="xjobtitle" ng-model="xjobtitle" required placeholder='Job Title'/>
-              <span ng-show="madForm.xjobtitle.$invalid.required">Please Enter a Job Title</span>
-              
-        <input type="text" ng-model="xtedioustask" required  placeholder='Tedious Task'/>
-              <span ng-show="madForm.xtedioustask.$error.required">Please Enter a Tedious Task</span>
-              
-        <input type="text" ng-model="xdirtytask" required  placeholder='Dirty Task'/>
-              <span ng-show="madForm.xdirtytask.$valid">Please Enter a Dirty Task</span>
-              
-        <input type="text" ng-model="xcelebrity" required  placeholder='Celebrity's Name'/>
-              <span ng-show="madForm.xcelebrity.$valid">Please Enter a Celebrity's Name</span>
-        
-        <input type="text" ng-model="xuselessskill" required  placeholder='Useless Skill'/>
-              <span ng-show="madForm.xuselessskill.$valid">Please Enter a Useless Skill</span>
-              
-        <input type="text" ng-model="xadjective" required  placeholder='Adjective'/>
-              <span ng-show="madForm.xadjective.$valid">Please Enter an Adjective</span>
-              
-        <input type="text" ng-model="xobnoxiuouscelbertity" required  placeholder='Obnoxiuos Celebrity'/>
-              <span ng-show="madForm.xobnoxiuouscelbertity.$valid">Please  Enter an Obnoxiuos Celebrity</span>
-              
-        <input type="text" ng-model="xhugenumber" required  placeholder='Huge Number'/>
-              <span ng-show="madForm.xhugenumber.$valid">Please Enter a Huge Number</span>
-        <input type="submit" value="Submit" ng-disabled="madFormx.$invalid" />
+        <div id="1">
+        <select name="femalenames" ng-model="femalename" ng-options="femalename.name for femalename in femalenames" required>
+            <option value='' disabled selected>Select a Female Name</option></select><br />
+            <span ng-show="madForm.$dirty && madForm.femalenames.$error.required">Choosing a name is required.</span>
+        </div>
 
+        <div id="2">
+        <input type="text" name="jobtitle" ng-model="jobtitle" required placeholder='Job Title'/><br />
+              <span ng-show="madForm.$dirty && madForm.jobtitle.$error.required">Please Enter a Job Title</span>
+        </div>
+
+        <div id="3">
+        <input type="text" name="tedioustask" ng-model="tedioustask" required  placeholder='Tedious Task'/><br />
+              <span ng-show="madForm.$dirty && madForm.tedioustask.$error.required">Please Enter a Tedious Task</span>
+        </div>
+
+        <div id="4">
+        <input type="text" name="dirtytask" ng-model="dirtytask" required  placeholder='Dirty Task'/><br />
+              <span ng-show="madForm.$dirty && madForm.dirtytask.$error.required">Please Enter a Dirty Task</span>
+        </div>
+
+        <div id="5">
+        <input type="text" name="celebrity" ng-model="celebrity" required  placeholder='Celebrity's Name'/><br />
+              <span ng-show="madForm.$dirty && madForm.celebrity.$error.required">Please Enter a Celebrity's Name</span>
+        </div>
+
+        <div id="6">
+        <input type="text" name="uselessskill" ng-model="uselessskill" required  placeholder='Useless Skill'/><br />
+              <span ng-show="madForm.$dirty && madForm.uselessskill.$error.required">Please Enter a Useless Skill</span>
+        </div>
+
+        <div id="7">
+        <input type="text" name="adjective" ng-model="adjective" required  placeholder='Adjective'/><br />
+              <span ng-show="madForm.$dirty && madForm.adjective.$error.required">Please Enter an Adjective</span>
+        </div>
+
+        <div id="8">
+        <input type="text" name="obnoxiuouscelbertity" ng-model="obnoxiuouscelbertity" required  placeholder='Obnoxiuos Celebrity'/><br />
+              <span ng-show="madForm.$dirty && madForm.obnoxiuouscelbertity.$error">Please  Enter an Obnoxiuos Celebrity</span>
+        </div>
+
+        <div id="9">
+        <input type="text" name="hugenumber" ng-model="hugenumber" required  placeholder='Huge Number' ng-minlength="10" ng-pattern="/^\d+$/"><br />
+              <span ng-show="madForm.$dirty && madForm.hugenumber.$error.minlength">Please Enter a Bigger Huge Number</span><br />
+              <span ng-show="madForm.$dirty && madForm.hugenumber.$error.pattern">Please Enter a Number</span>
+        </div>
+
+        <div id="10">
+        <input type="submit" value="Submit" />
+        </div>
     </td>
 </tr>
 </form>
+</div>
 <div  ng-show="madForm.$submitted">
 <tr>
     <td colspan="2">
         <p>
-            {{femalename}} was a {{jobtitle}} who loved technology. Although she loved parts of her job, she absolutely hated
-            {{tedioustask}} and {{dirtytask}}. So, {{femalename}} met with her life mentor {{celebrity}} who told her to learn
+            {{femalename.name}} was a {{jobtitle}} who loved technology. Although she loved parts of her job, she absolutely hated
+            {{tedioustask}} and {{dirtytask}}. So, {{femalename.name}} met with her life mentor {{celebrity}} who told her to learn
             how to {{uselessskill}} with Thinkful. Thinkful didn't offer a course on {{uselessskill}} so she studied programming instead.
         </p>
         <p>
-            What a great decision! With her new skills, {{femalename}} built a(n) {{adjective}} robot named {{obnoxiuouscelbertity}}
+            What a great decision! With her new skills, {{femalename.name}} built a(n) {{adjective}} robot named {{obnoxiuouscelbertity}}
             that not only loved {{dirtytask}} but did it {{hugenumber}} faster.
     </td>
 </tr>

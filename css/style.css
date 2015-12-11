@@ -31,3 +31,13 @@ table {
 input.ng-invalid.ng-dirty {
     border: 1px solid red;
 }
+.error {
+
+    font-size: small;
+    color: red;
+}
+#parent {
+    width: 60%;
+    height: 80%;
+   background-color: lightgrey;
+}

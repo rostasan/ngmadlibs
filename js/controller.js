@@ -9,7 +9,7 @@ angular
         .controller('appCtrl', appCtrl);
 
 function appCtrl($scope){
-        $scope.xfemalename =[
+        $scope.femalenames =[
                             {name: "Lily"},
                             {name: "Emily"},
                             {name: "Madelyn"},
@@ -33,7 +33,7 @@ function appCtrl($scope){
                             {name: "Evelyn"},
                             {name: "Addison"} 
                             ];
-        $scope.xjobtitle = "";
+    /*        $scope.xjobtitle = "";
         $scope.xtedioustask = "";
         $scope.xdirtytask = "";
         $scope.xcelebrity = "";
@@ -41,7 +41,7 @@ function appCtrl($scope){
         $scope.xadjective = "";
         $scope.xobnoxiuouscelbertity = "";
         $scope.xhugenumber = "";
-        $scope.madLib = function(){
+       $scope.madLib = function(){
             console.log("Submitting worked");
                 $scope.femalename = $scope.selected.xfemalenames.name;
                 $scope.jobtitle = $scope.xjobtitle;
@@ -52,6 +52,6 @@ function appCtrl($scope){
                 $scope.adjective = $scope.xadjective;
                 $scope.obnoxiuouscelbertity = $scope.xobnoxiuouscelbertity;
                 $scope.hugenumber = $scope.xhugenumber;
-            };
+            }; */
         }
     })();
