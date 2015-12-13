@@ -1,4 +1,4 @@
-<div id="parent" >
+<div id="parent" ng-hide="madForm.$submitted && madForm.$valid">
 <form name="madForm" ng-submit="madLib()" novalidate class="error" ng-model-options="{ updateOn: 'submitted' }">
 <tr>
     <td colspan="2">
@@ -57,7 +57,7 @@
 </tr>
 </form>
 </div>
-<div  ng-show="madForm.$submitted">
+<div  ng-show="madForm.$submitted && madForm.$valid">
 <tr>
     <td colspan="2">
         <p>
@@ -67,7 +67,10 @@
         </p>
         <p>
             What a great decision! With her new skills, {{femalename.name}} built a(n) {{adjective}} robot named {{obnoxiuouscelbertity}}
-            that not only loved {{dirtytask}} but did it {{hugenumber}} faster.
+            that not only loved {{dirtytask}} but did it {{hugenumber}} faster.<br />
+                  <button type="button"
+              ng-click="resetMadform($setPristine())"
+              ng-disabled="madForm.!$submitted">Reset</button>
     </td>
 </tr>
 </div>

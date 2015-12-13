@@ -53,5 +53,9 @@ function appCtrl($scope){
                 $scope.obnoxiuouscelbertity = $scope.xobnoxiuouscelbertity;
                 $scope.hugenumber = $scope.xhugenumber;
             }; */
-        }
+        };
+     function resetForm($scope){
+         $scope.resetForm = null;
+         
+     }   
     })();
