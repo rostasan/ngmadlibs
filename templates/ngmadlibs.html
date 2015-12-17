@@ -68,9 +68,7 @@
         <p>
             What a great decision! With her new skills, {{femalename.name}} built a(n) {{adjective}} robot named {{obnoxiuouscelbertity}}
             that not only loved {{dirtytask}} but did it {{hugenumber}} faster.<br />
-                  <button type="button"
-              ng-click="resetMadform($setPristine())"
-              ng-disabled="madForm.!$submitted">Reset</button>
+            <input type="button" ng-click="reset()" value="Reset" ng-model-options="{ updateOn: 'reset' }" />
     </td>
 </tr>
 </div>
