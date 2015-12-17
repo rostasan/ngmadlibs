@@ -32,21 +32,25 @@ function appCtrl($scope){
                             {name: "Aaliyah"},
                             {name: "Evelyn"},
                             {name: "Addison"}
-    ];
+
+];
+    /* Reset scope binding */
+        $scope.resetnames = $scope.femalenames;
         $scope.resetForm = [];
 
+       $scope.reset = function(madForm) {
 
-        $scope.reset = function(madForm) {
-            $scope.femalenames = angular.copy($scope.resetForm);
-            $scope.jobtitle = angular.copy($scope.resetForm);
-            $scope.tedioustask = angular.copy($scope.resetForm);
-            $scope.dirtytask = angular.copy($scope.resetForm);
-            $scope.celebrity = angular.copy($scope.resetForm);
-            $scope.uselessskill = angular.copy($scope.resetForm);
-            $scope.adjective = angular.copy($scope.resetForm);
-            $scope.obnoxiuouscelbertity = angular.copy($scope.resetForm);
-            $scope.hugenumber = angular.copy($scope.resetForm);
-            madForm.$setPristine()
+            $scope.madForm.$setPristine();
+
+           $scope.femalenames = angular.copy($scope.resetnames);
+           $scope.jobtitle = angular.copy($scope.resetForm);
+           $scope.tedioustask = angular.copy($scope.resetForm);
+           $scope.dirtytask = angular.copy($scope.resetForm);
+           $scope.celebrity = angular.copy($scope.resetForm);
+           $scope.uselessskill = angular.copy($scope.resetForm);
+           $scope.adjective = angular.copy($scope.resetForm);
+           $scope.obnoxiuouscelbertity = angular.copy($scope.resetForm);
+           $scope.hugenumber = angular.copy($scope.resetForm);
     };
 
 
@@ -56,7 +60,33 @@ function appCtrl($scope){
     })();
 
 
-    /*        $scope.xjobtitle = "";
+    /*
+
+     $scope.resetForm = [];
+     $scope.femalenames = angular.copy($scope.resetForm);
+     $scope.jobtitle = angular.copy($scope.resetForm);
+     $scope.tedioustask = angular.copy($scope.resetForm);
+     $scope.dirtytask = angular.copy($scope.resetForm);
+     $scope.celebrity = angular.copy($scope.resetForm);
+     $scope.uselessskill = angular.copy($scope.resetForm);
+     $scope.adjective = angular.copy($scope.resetForm);
+     $scope.obnoxiuouscelbertity = angular.copy($scope.resetForm);
+     $scope.hugenumber = angular.copy($scope.resetForm);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    $scope.xjobtitle = "";
  $scope.xtedioustask = "";
  $scope.xdirtytask = "";
  $scope.xcelebrity = "";
