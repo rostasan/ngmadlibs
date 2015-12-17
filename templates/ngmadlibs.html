@@ -1,65 +1,63 @@
-<div id="parent" ng-hide="madForm.$submitted && madForm.$valid">
+<div ng-hide="madForm.$submitted && madForm.$valid">
 <form name="madForm" ng-submit="madLib()" novalidate class="error" ng-model-options="{ updateOn: 'submitted' }">
-<tr>
-    <td colspan="2">
 
-        <div id="1">
+
+        <div id="box1">
         <select name="femalenames" ng-model="femalename" ng-options="femalename.name for femalename in femalenames" required>
             <option value='' disabled selected>Select a Female Name</option></select><br />
             <span ng-show="madForm.$dirty && madForm.femalenames.$error.required">Choosing a name is required.</span>
         </div>
 
-        <div id="2">
+        <div id="box2">
         <input type="text" name="jobtitle" ng-model="jobtitle" required placeholder='Job Title'/><br />
               <span ng-show="madForm.$dirty && madForm.jobtitle.$error.required">Please Enter a Job Title</span>
         </div>
 
-        <div id="3">
+        <div id="box3">
         <input type="text" name="tedioustask" ng-model="tedioustask" required  placeholder='Tedious Task'/><br />
               <span ng-show="madForm.$dirty && madForm.tedioustask.$error.required">Please Enter a Tedious Task</span>
         </div>
 
-        <div id="4">
+        <div id="box4">
         <input type="text" name="dirtytask" ng-model="dirtytask" required  placeholder='Dirty Task'/><br />
               <span ng-show="madForm.$dirty && madForm.dirtytask.$error.required">Please Enter a Dirty Task</span>
         </div>
 
-        <div id="5">
+        <div id="box5">
         <input type="text" name="celebrity" ng-model="celebrity" required  placeholder='Celebrity's Name'/><br />
               <span ng-show="madForm.$dirty && madForm.celebrity.$error.required">Please Enter a Celebrity's Name</span>
         </div>
 
-        <div id="6">
+        <div id="box6">
         <input type="text" name="uselessskill" ng-model="uselessskill" required  placeholder='Useless Skill'/><br />
               <span ng-show="madForm.$dirty && madForm.uselessskill.$error.required">Please Enter a Useless Skill</span>
         </div>
 
-        <div id="7">
+        <div id="box7">
         <input type="text" name="adjective" ng-model="adjective" required  placeholder='Adjective'/><br />
               <span ng-show="madForm.$dirty && madForm.adjective.$error.required">Please Enter an Adjective</span>
         </div>
 
-        <div id="8">
+        <div id="box8">
         <input type="text" name="obnoxiuouscelbertity" ng-model="obnoxiuouscelbertity" required  placeholder='Obnoxiuos Celebrity'/><br />
               <span ng-show="madForm.$dirty && madForm.obnoxiuouscelbertity.$error">Please  Enter an Obnoxiuos Celebrity</span>
         </div>
 
-        <div id="9">
+        <div id="box9">
         <input type="text" name="hugenumber" ng-model="hugenumber" required  placeholder='Huge Number' ng-minlength="10" ng-pattern="/^\d+$/"><br />
               <span ng-show="madForm.$dirty && madForm.hugenumber.$error.minlength">Please Enter a Bigger Huge Number</span><br />
               <span ng-show="madForm.$dirty && madForm.hugenumber.$error.pattern">Please Enter a Number</span>
         </div>
 
-        <div id="10">
-        <input type="submit" value="Submit" />
+        <div id="box10">
+        <input type="submit" value="Generate My Mad Lib" />
         </div>
-    </td>
-</tr>
+
 </form>
 </div>
 <div  ng-show="madForm.$submitted && madForm.$valid">
-<tr>
-    <td colspan="2">
+
+
         <p>
             {{femalename.name}} was a {{jobtitle}} who loved technology. Although she loved parts of her job, she absolutely hated
             {{tedioustask}} and {{dirtytask}}. So, {{femalename.name}} met with her life mentor {{celebrity}} who told her to learn
@@ -68,7 +66,6 @@
         <p>
             What a great decision! With her new skills, {{femalename.name}} built a(n) {{adjective}} robot named {{obnoxiuouscelbertity}}
             that not only loved {{dirtytask}} but did it {{hugenumber}} faster.<br />
-            <input type="button" ng-click="reset()" value="Reset" ng-model-options="{ updateOn: 'reset' }" />
-    </td>
-</tr>
+            <input type="button" ng-click="reset()" value="Start Over" ng-model-options="{ updateOn: 'reset' }" />
+
 </div>

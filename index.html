@@ -3,28 +3,30 @@
 
   <head>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-
+    <link rel="stylesheet" type="text/css" href="css/formClass.css" />
   </head>
 
   <body>
-  <span> <a href="#/ngMadlibs"> ngMadlibs </a> </span>
+  <!--<span> <a href="#/ngMadlibs"> ngMadlibs </a> </span>
 
   <!-- https://www.youtube.com/watch?v=G5MzkDJQkoQ | <a href="#/build"> Build </a>   |  <a href="#/display"> result </a>-->
 
-  <table ng-controller="appCtrl">
-      <tr>
-          <td>
-              <img src="images/ngmadlibs.png" width="70%">
-          </td>
-          <td>
-              <img src="images/smiley.png" width="100%">
-          </td>
-      </tr>
-      <div ng-view></div>
-  </table>
+  <div id="parent">
+              <picture class="left" >
+                <source media="(min-width: 64em) src="images/smiley.png">    
+                
+                <img src="images/smiley.png">
 
+            </picture>
+              <picture class="right">
+                <source media="(min-width: 64em) src="images/ngmadlibs.png">    
+                
+                <img src="images/ngmadlibs.png">
+                
+            </picture>
+      <div id="center" ng-view></div>
   
- 
+ </div>
 
       
     
