@@ -3,11 +3,12 @@
 
 body {
  
-  font-size: 2.5vw;
-
+    font-size: 2.5vw;
+  
 }
 select {
      font-size: 2.5vw;
+     width: 25vw;
     
 }
 input {
@@ -19,12 +20,10 @@ input {
 
 
 p {
-  text-align: justify;
-  margin: 1cm 2cm 1cm 2cm;
+    text-align: justify;
+    margin: 1cm 2cm 1cm 2cm;
 }
-table {
- border-spacing:0px;
-}
+
 .blue {
     text-decoration-color: blue;
 }
@@ -41,45 +40,50 @@ picture {
     height: 100%;
 }
 #parent {
-    width: 100%;
-    height: 100%;
- 
+     margin: auto auto auto auto;
    padding: 5vh;
 }
-#wrapper {
-  margin: 0 auto;
-  max-width: 700px;
-  padding-right: 320px; /* padding should be the total width of all right columns */
-}
-#header, #footer {	
-  margin-left: -200px;    /* LC fullwidth */
-  margin-right: -210px;   /* RC fullwidth + CC padding */	
-}
-.column { position: relative; float: left; }
+
+
 #center { 
     position: fixed;
-    min-height: 90%;
-    min-width: 90%;
+    top: 35vw;
+    left: 5vw;
+    width: 90vw;
+    height: 30vw;
+
     display: flex;
-    flex-direction: column;
-    flex: 1 1 auto;
-    margin: auto;
+    margin: auto auto auto auto;
     background-color: lightgrey;
-    border: thick black;
+    border: solid black;
 }
 #left {	
-  width: px; /* LC width */ 
-  padding: 0 10px;  /* LC padding */	
-  right: 240px;  /* LC fullwidth + CC padding */	
-  margin-left: -100%;	
+    position: fixed;
+    top: 5vw;
+    left: 5vw;
+    width: 35vw;
+    height: 30vw;
+    border: solid black;
+
+    display: flex;
+
+
 }
 #right { 
-  width: px; /* RC width */ 
-  padding: 0 10px; /* RC padding */ 
-  margin-right: -100%; 
-  border: solid black thin;
+    position: fixed;
+    top: 5vw;
+    left: 40vw;
+    width: 55vw;
+    height: 30vw;
+     border-left: solid white;
+     border-top: solid black; 
+     border-bottom: solid black;
+     border-right:  solid black;
+    display: flex;
+   
 }
-#footer { clear: both; }
-
-/*** IE Fix ***/
-* html #left { left: 170px;  /* RC fullwidth */ }
+img {
+    max-height: 93%;
+    max-width: 93%;
+    margin: auto auto auto auto;
+}

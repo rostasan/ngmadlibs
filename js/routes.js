@@ -7,7 +7,7 @@ angular.module('madApp', ['ngRoute'])
 
             when('/',
             {
-                templateUrl : 'templates/home.html',
+                templateUrl : 'templates/ngmadlibs.html',
                 controller : 'appCtrl'
             }).
 
