@@ -34,75 +34,115 @@ function appCtrl($scope){
                             {name: "Addison"}
 
 ];
-    /* Reset scope binding */
-        $scope.resetnames = $scope.femalenames;
-        $scope.resetForm = [];
+               
+                    $scope.inputs = [
+                        {
+                            type:"text",
+                            name:'jobtitle',
+                            model:'jobtitle',
+                            required:'required',
+                            placeholder:"Job Title",
+                            value:'',
+                            valid1:'',
+                            valid2:'',
+                            id:"box2"
+                        },
+                        {
+                            type:'text',
+                            name:'tedioustask',
+                            model:'tedioustask',
+                            required:'required',
+                            placeholder:"Tedious Task",
+                            value:'',
+                            valid1:'',
+                            valid2:'',
+                            id:'box3'
+                        },
+                        {
+                            type:'text',
+                            name:'dirtytask',
+                            model:'dirtytask',
+                            required:'required',
+                            placeholder:"Dirty Task",
+                            value:'',
+                            valid1:'',
+                            valid2:'',
+                            id:'box4'
+                        },
+                        {
+                            type:'text',
+                            name:'celebrity',
+                            model:'celebrity',
+                            required:'required',
+                            placeholder:"Celebrity's Name",
+                            value:'',
+                            valid1:'',
+                            valid2:'',
+                            id:'box5'
+                        },
+                        {
+                            type:'text',
+                            name:'uselessskill',
+                            model:'uselessskill',
+                            required:'required',
+                            placeholder:"Useless Skill",
+                            value:'',
+                            valid1:'',
+                            valid2:'',
+                            id:'box6'
+                        },
+                        {
+                            type:'text',
+                            name:'jobtitle',
+                            model:'jobtitle',
+                            required:'required',
+                            placeholder:"Job Title",
+                            value:'',
+                            valid1:'',
+                            valid2:'',
+                            id: 'box7'
+                        },
+                        {
+                            type:'text',
+                            name:'adjective',
+                            model:'adjective',
+                            required:'required',
+                            placeholder:"Adjective",
+                            value:'',
+                            valid1:'',
+                            valid2:'',
+                            id:'box8'
+                        },
+                        {
+                            type:'text',
+                            name:'obnoxiuouscelbertity',
+                            model:'obnoxiuouscelbertity',
+                            required:'required',
+                            placeholder:"Obnoxiuos Celebrity",
+                            value:'',
+                            valid1:'',
+                            valid2:'',
+                            id:'box9'
+                        }
+
+                    ]
+                    
+                };
+ 
 
        $scope.reset = function(madForm) {
 
             $scope.madForm.$setPristine();
 
-           $scope.femalenames = angular.copy($scope.resetnames);
-           $scope.jobtitle = angular.copy($scope.resetForm);
-           $scope.tedioustask = angular.copy($scope.resetForm);
-           $scope.dirtytask = angular.copy($scope.resetForm);
-           $scope.celebrity = angular.copy($scope.resetForm);
-           $scope.uselessskill = angular.copy($scope.resetForm);
-           $scope.adjective = angular.copy($scope.resetForm);
-           $scope.obnoxiuouscelbertity = angular.copy($scope.resetForm);
-           $scope.hugenumber = angular.copy($scope.resetForm);
+           $scope.femalenames = $scope.femalenames;
+           $scope.jobtitle = '';
+           $scope.tedioustask = '';
+           $scope.dirtytask = '';
+           $scope.celebrity = '';
+           $scope.uselessskill = '';
+           $scope.adjective = '';
+           $scope.obnoxiuouscelbertity = '';
+           $scope.hugenumber = '';
     };
-
-
-
-        }
-
-    })();
-
-
-    /*
-
-     $scope.resetForm = [];
-     $scope.femalenames = angular.copy($scope.resetForm);
-     $scope.jobtitle = angular.copy($scope.resetForm);
-     $scope.tedioustask = angular.copy($scope.resetForm);
-     $scope.dirtytask = angular.copy($scope.resetForm);
-     $scope.celebrity = angular.copy($scope.resetForm);
-     $scope.uselessskill = angular.copy($scope.resetForm);
-     $scope.adjective = angular.copy($scope.resetForm);
-     $scope.obnoxiuouscelbertity = angular.copy($scope.resetForm);
-     $scope.hugenumber = angular.copy($scope.resetForm);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    $scope.xjobtitle = "";
- $scope.xtedioustask = "";
- $scope.xdirtytask = "";
- $scope.xcelebrity = "";
- $scope.xuselessskill = "";
- $scope.xadjective = "";
- $scope.xobnoxiuouscelbertity = "";
- $scope.xhugenumber = "";
- $scope.madLib = function(){
- console.log("Submitting worked");
- $scope.femalename = $scope.selected.xfemalenames.name;
- $scope.jobtitle = $scope.xjobtitle;
- $scope.tedioustask = $scope.xtedioustask;
- $scope.dirtytask = $scope.xdirtytask;
- $scope.celebrity = $scope.xcelebrity;
- $scope.uselessskill = $scope.xuselessskill;
- $scope.adjective = $scope.xadjective;
- $scope.obnoxiuouscelbertity = $scope.xobnoxiuouscelbertity;
- $scope.hugenumber = $scope.xhugenumber;
- }; */
+    
+})();
