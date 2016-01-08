@@ -5,7 +5,7 @@
  */
 (function(){
 angular
-        .module('madApp')
+        .module('madApp', ['ngMessages'])
         .controller('appCtrl', appCtrl);
 
 function appCtrl($scope){
@@ -128,7 +128,9 @@ function appCtrl($scope){
                     ]
                     
                 };
- 
+
+    /*
+
 
        $scope.reset = function(madForm) {
 
@@ -143,6 +145,6 @@ function appCtrl($scope){
            $scope.adjective = '';
            $scope.obnoxiuouscelbertity = '';
            $scope.hugenumber = '';
-    };
-    
+    }; */
+
 })();
