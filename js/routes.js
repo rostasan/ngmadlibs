@@ -1,7 +1,7 @@
 /**
  * Created by 0 on 11/5/2015.
  */
-angular.module('madApp', ['ngRoute'])
+angular.module('madApp')
     .config(['$routeProvider', function($routeProvider){
         $routeProvider.
 

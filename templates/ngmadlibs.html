@@ -8,16 +8,19 @@
             <span ng-show="madForm.$dirty && madForm.femalenames.$error.required">Choosing a name is required.</span>
         </div>
     
-        <div ng-repeat="input in inputs" id="{{input.id}}">
-            <input 
-                type="{{input.type}}" 
-                name="{{input.name}}" 
-                ng-model="input.model"
-                required
-                placeholder="{{input.placeholder}}" 
-                   />
-            
-        </div>    
+                <div ng-repeat="input in inputs" id="{{input.id}}">
+                    <input
+                    type="{{input.type}}"
+                    name="{{input.name}}"
+                    ng-model="input.name"
+                    required
+                    placeholder="{{input.placeholder}}"
+                    />
+
+                    <div ng-messages="madForm.input.$dirty && madForm.input.$error">
+                        <div ng-message='required'>Please enter a {{input.name}}</div>
+                    </div>
+                </div>
 
         <div id="box10">
         <input type="submit" value="Generate My Mad Lib" />

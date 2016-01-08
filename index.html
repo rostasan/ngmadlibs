@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html ng-app="madApp">
+<html>
 
   <head>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/formClass.css" />
   </head>
 
-  <body>
+  <body ng-app="madApp">
 <!--  <span> <a href="#/ngMadlibs"> ngMadlibs </a> </span>
 
-  <!-- https://www.youtube.com/watch?v=G5MzkDJQkoQ | <a href="#/build"> Build </a>   |  <a href="#/display"> result </a>-->
-
+  <!-- https://www.youtube.com/watch?v=G5MzkDJQkoQ | <a href="#/build"> Build </a>   |  <a href="#/display"> result </a>
+-->
   <div id="parent">
               <picture id="left" >
                 <source src="images/smiley.png">    
@@ -25,20 +25,23 @@
                 
             </picture>
       <div id="center" ng-view></div>
-  
+
  </div>
 
-      
-    
+<footer>
 
-  
-  {{ version }}
+{{ version }}
+</footer>
+
+
 
   <script type="text/javascript" src="bower_components/angular/angular.js"></script>
   <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
-  <script src="js/routes.js"></script>
-  <script src="js/formMess.js"></script>
-  <script src="js/app.js"></script>
+  <script type="text/javascript" src="bower_components/angular-messages/angular-messages.js"></script>
+<script src="js/app.js"></script>
+<script src="js/routes.js"></script>
+
+
   <script src="js/controller.js"></script>
 
   

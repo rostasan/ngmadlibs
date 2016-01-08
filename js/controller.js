@@ -5,7 +5,7 @@
  */
 (function(){
 angular
-        .module('madApp', ['ngMessages'])
+        .module('madApp')
         .controller('appCtrl', appCtrl);
 
 function appCtrl($scope){
@@ -39,7 +39,7 @@ function appCtrl($scope){
                         {
                             type:"text",
                             name:'jobtitle',
-                            model:'jobtitle',
+                            model:'',
                             required:'required',
                             placeholder:"Job Title",
                             value:'',
@@ -50,7 +50,7 @@ function appCtrl($scope){
                         {
                             type:'text',
                             name:'tedioustask',
-                            model:'tedioustask',
+                            model:'',
                             required:'required',
                             placeholder:"Tedious Task",
                             value:'',
