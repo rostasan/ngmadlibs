@@ -88,3 +88,9 @@ img {
     max-width: 93%;
     margin: auto auto auto auto;
 }
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    left: 10px;
+}
