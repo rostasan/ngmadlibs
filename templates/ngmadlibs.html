@@ -11,14 +11,14 @@
                 <div ng-repeat="input in inputs" id="{{input.id}}">
                     <input
                     type="{{input.type}}"
-                    name="{{input.name}}"
-                    ng-model="input.name"
+                    name="{{input.names}}"
+                    ng-model="input.model"
                     required
                     placeholder="{{input.placeholder}}"
                     />
 
-                    <div ng-messages="madForm.input.$dirty && madForm.input.$error">
-                        <div ng-message='required'>Please enter a {{input.name}}</div>
+                    <div ng-messages="madForm.names.$dirty && madForm.names.$error">
+                        <div ng-message="required">lease enter a {{input.name}}</div>
                     </div>
                 </div>
 

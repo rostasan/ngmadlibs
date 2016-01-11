@@ -38,7 +38,7 @@ function appCtrl($scope){
                     $scope.inputs = [
                         {
                             type:"text",
-                            name:'jobtitle',
+                            names:'jobtitle',
                             model:'',
                             required:'required',
                             placeholder:"Job Title",
@@ -49,7 +49,7 @@ function appCtrl($scope){
                         },
                         {
                             type:'text',
-                            name:'tedioustask',
+                            names:'tedioustask',
                             model:'',
                             required:'required',
                             placeholder:"Tedious Task",
@@ -60,8 +60,8 @@ function appCtrl($scope){
                         },
                         {
                             type:'text',
-                            name:'dirtytask',
-                            model:'dirtytask',
+                            names:'dirtytask',
+                            model:'',
                             required:'required',
                             placeholder:"Dirty Task",
                             value:'',
@@ -71,8 +71,8 @@ function appCtrl($scope){
                         },
                         {
                             type:'text',
-                            name:'celebrity',
-                            model:'celebrity',
+                            names:'celebrity',
+                            model:'',
                             required:'required',
                             placeholder:"Celebrity's Name",
                             value:'',
@@ -82,8 +82,8 @@ function appCtrl($scope){
                         },
                         {
                             type:'text',
-                            name:'uselessskill',
-                            model:'uselessskill',
+                            names:'uselessskill',
+                            model:'',
                             required:'required',
                             placeholder:"Useless Skill",
                             value:'',
@@ -93,8 +93,8 @@ function appCtrl($scope){
                         },
                         {
                             type:'text',
-                            name:'jobtitle',
-                            model:'jobtitle',
+                            names:'jobtitle',
+                            model:'',
                             required:'required',
                             placeholder:"Job Title",
                             value:'',
@@ -104,8 +104,8 @@ function appCtrl($scope){
                         },
                         {
                             type:'text',
-                            name:'adjective',
-                            model:'adjective',
+                            names:'adjective',
+                            model:'',
                             required:'required',
                             placeholder:"Adjective",
                             value:'',
@@ -115,8 +115,8 @@ function appCtrl($scope){
                         },
                         {
                             type:'text',
-                            name:'obnoxiuouscelbertity',
-                            model:'obnoxiuouscelbertity',
+                            names:'obnoxiuouscelbertity',
+                            model:'',
                             required:'required',
                             placeholder:"Obnoxiuos Celebrity",
                             value:'',
